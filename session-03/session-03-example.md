@@ -5,6 +5,8 @@ special thanks to [Bertie](https://www.instagram.com/bertiebertthepom/)! <3 <3 <
 
 [Link to Final Sketch in p5 Editor](https://editor.p5js.org/DeadAugust/sketches/iMudwwu9h)
 
+![the final sketch](assets/finalBertie_optimized.gif)
+
 ## Intro: Why Bools? 
 You can think of conditional statements like the choices in a "Choose Your Own Adventure" book or game. Each moment is followed by a choice (*do you want to take the treasure or do you want to run away?*), then that choice defines what you see next (*if you took the treasure, turn to page 69. if you ran away, turn to page 420*). This branching path of choice is like the stages in your p5.js sketch.
 
@@ -62,6 +64,8 @@ function draw(){
     ellipse(pushButtonX, pushButtonY, buttonSize);
 }
 ```
+
+![the simple canvas setup with two buttons](assets/partOne_canvas.PNG)
 
 Right now these are fake buttons! They don't do anything but look pretty.
 
@@ -174,6 +178,8 @@ We're going to just use the else, because that's the simplest way and (usually) 
   }
 ```
 
+![a light background triggered by toggle press](assets/partTwo_light.PNG)
+
 But wouldn't it be great if the button itself told us when it was on and off? We all know how frustrating it is on the internet or in meatspace when we can't tell when a button is pressed.
 
 Since the light's just a test, let's get rid of that and instead use that same logic to get the button to light up when it's pressed down. To do that, we'll draw a special "lit" rectangle as a highlight behind our button rectangle:
@@ -186,6 +192,8 @@ if(isToggleButtonDown){
     isSitting = true;
 } //we don't need an else yet
 ```
+
+![a highlight around the toggle](assets/partTwo_highlight.PNG)
 
 That's it for the toggle!
 
@@ -242,6 +250,8 @@ if(mouseIsPressed &&
 }
 ```
 
+![a big highlight around the pushbutton](assets/partTwo_circle.PNG)
+
 Pretty cool! But wait, we want it to eventually go back down. We can use conditional statements to set a range that the highlight can pulse up and down. We can also create a new variable that can store the amount to move the pulse *and* the direction we should be moving -- pushPulseDirection. 
 
 Declare this at the top:
@@ -260,6 +270,8 @@ if(pushPulseValue > 10){
     pushPulseDirection = 1
 }
 ```
+
+![a pulsing highlight around the pushbutton](assets/pulse.gif)
 
 What this does is make sure that if the pulseValue gets too high, it'll start decreasing because it'll be adding a negative 1 to the value. Then, once it gets too small, it flips the negative to a positive. 
 
@@ -466,7 +478,7 @@ function mouseReleased(){
 
 Note that once triggered, this boolean never goes back to being false. After Bertie has earned his treat, he'll always be a good boy! The only way to reset the boolean back to false is to restart the sketch.
 
-
+![the final sketch](assets/finalBertie_optimized.gif)
 
 
 ## Such a cute good boy!

@@ -63,6 +63,8 @@ function draw(){
 }
 ```
 
+Obviously, right now these are fake buttons! They don't do anything but look pretty.
+
 ## Part Two: What Does The Toggle Button Do?
 In this section, we'll:
 * go over the conditionals that allow us to click the square toggle button
@@ -116,7 +118,7 @@ What we're looking for is:
 
 The When is that if() statement, but how do we change the boolean from true to false and vice versa?
 
-We could go overboard and change that boolean like so:
+We *could* go overboard and change that boolean like so:
 ```js
     if(isToggleButtonDown){ // same as if(isToggleButtonDown == true)
         isToggleButtonDown = false;
@@ -148,19 +150,19 @@ But what can we do with this bool now? Well anything that goes back and forth is
 We'll add the following to the if statement:
 
 ```js
-console.log("Is the light on? " + isLightOn);
+console.log("Is the light on? " + isToggleButtonDown);
 ```
 
 Because we only want to "turn the lights on" when the button is down, we check for that first with an if(isToggleButtonDown). Since the button not being pressed is the default, we can make that happen in several different ways. The following are all equivalent ways of doing that:
 
 ```js
-  else if (!isLightOn)
-  else if (isLightOn != true)
-  if(!isLightOn)
+  else if (!isToggleButtonDown)
+  else if (isToggleButtonDown != true)
+  if(!isToggleButtonDown)
   else  
 ```
 
-We're going to just use the else, because that's the simplest way and (usually) therefore the most reliable. So We'll add this to the draw loop, replacing the background():
+We're going to just use the else, because that's the simplest way and (usually) therefore the most reliable. So we'll add this to the draw loop, replacing the background():
 
 ```js
   //testing the toggle by changing the background color
@@ -174,7 +176,7 @@ We're going to just use the else, because that's the simplest way and (usually) 
 
 But wouldn't it be great if the button itself told us when it was on and off? We all know how frustrating it is on the internet or in meatspace when we can't tell when a button is pressed.
 
-Since the light's just a test, let's get rid of that and instead use that same logic to get the button to light up when it's down. To do that, we'll draw a special "lit" rectangle behind our button rectangle:
+Since the light's just a test, let's get rid of that and instead use that same logic to get the button to light up when it's pressed down. To do that, we'll draw a special "lit" rectangle as a highlight behind our button rectangle:
 
 ```js
 //toggle button highlight
@@ -200,11 +202,11 @@ Now let's explore a different way of checking to see if the mouse is over the bu
 Because we don't have weird square sides, it's much easier to check if the mouseX and mouseY are within the bounds of the ellipse. All we need to do is see if the distance from the mouse to the center of the ellipse is less than or equal to the radius of the ellipse. We can use a handy built-in function for that, dist():
 
 ```js
-dist(mouseX, mouseY, pushButtonX, pushButtonY) < buttonSize/2 
+if(dist(mouseX, mouseY, pushButtonX, pushButtonY) < buttonSize/2)
 //buttonSize is the diameter, so buttonSize/2 is the radius
 ```
 
-![a graph showing two different clicks' distance to the center of a circle](assets\icmWeek3_distanceGraph.PNG)
+![a graph showing two different clicks' distance to the center of a circle](assets/icmWeek3_distanceGraph.PNG)
 
 ### mousePressed() vs mouseIsPressed
 But where should we use that distance function? We could put it in the mousePressed function just like the square, but mousePressed() is only called **once** when the mouse is first pressed. What if we want to do something the whole time the mouse is held down over the button?
@@ -241,6 +243,11 @@ if(mouseIsPressed &&
 ```
 
 Pretty cool! But wait, we want it to eventually go back down. We can use conditional statements to set a range that the highlight can pulse up and down. We can also create a new variable that can store the amount to move the pulse *and* the direction we should be moving -- pushPulseDirection. 
+
+Declare this at the top:
+```js
+let pushPulseDirection = 1;
+```
 
 Now, we can replace that `pushPulseValue++;` line with:
 
@@ -482,8 +489,7 @@ The link to the editor is at the top, but here's the full code:
 let buttonSize; 
 let toggleButtonX, toggleButtonY, pushButtonX, pushButtonY;
 
-//booleans
-let isLightOn = false;
+//button booleans
 let isToggleButtonDown = false;
 
 //pulse variables
@@ -537,18 +543,18 @@ function setup() {
 function draw() {
   background(0,200,200);
   
-  //testing the toggle -- changing the background color
-//   if(isLightOn){
-//     background(220,220,100);
-//   } 
-//   // else if (!isLightOn)
-//   // else if (isLightOn != true)
-//   // else
-//   // if(!isLightOn)
-//   else {
-//     // background(0, 100, 100);
-//     background(255);
-//   }
+    //testing the toggle -- changing the background color
+    //   if(isToggleButtonDown){
+    //     background(220,220,100);
+    //   } 
+    //   // else if (!isToggleButtonDown)
+    //   // else if (isToggleButtonDown != true)
+    //   // else
+    //   // if(!isToggleButtonDown)
+    //   else {
+    //     // background(0, 100, 100);
+    //     background(255);
+    //   }
   
   //toggle button highlight
   if(isToggleButtonDown){
@@ -671,9 +677,7 @@ function mousePressed(){
     // console.log('button clicked');
     
     //toggle button -- goes from on to off to on
-    // isLightOn = true;
-    isLightOn = !isLightOn;
-    console.log("Is the light on? " + isLightOn);
+    console.log("Is the light on? " + isToggleButtonDown);
     isToggleButtonDown = !isToggleButtonDown;
   }
 }

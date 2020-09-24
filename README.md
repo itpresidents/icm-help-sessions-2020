@@ -1,5 +1,5 @@
 # ICM Help Sessions 2020
-*by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://github.com/guillemontecinos), [@viztopia](https://github.com/viztopia) and [@lydiajessup](https://github.com/lydiajessup) with :heart:*
+by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://github.com/guillemontecinos), [@viztopia](https://github.com/viztopia) and [@lydiajessup](https://github.com/lydiajessup) with :heart:
 
 ### Session 01 – Basics of p5.js
 * [Example: Green and Orange by Carmen Herrera](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-01/session-01.md)

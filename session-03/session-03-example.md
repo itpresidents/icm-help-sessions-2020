@@ -8,9 +8,9 @@ special thanks to [Bertie](https://www.instagram.com/bertiebertthepom/)! <3 <3 <
 ## Intro: Why Bools? 
 You can think of conditional statements like the choices in a "Choose Your Own Adventure" book or game. Each moment is followed by a choice (*do you want to take the treasure or do you want to run away?*), then that choice defines what you see next (*if you took the treasure, turn to page 69. if you ran away, turn to page 420*). This branching path of choice is like the stages in your p5.js sketch.
 
-Every decision that changes a state within your sketch can be represented with a boolean (*yes/no, true/false, 0/1*), and the internal logic of your sketch will follow the path that you outline using logical operators (ex. '&&' *AND*) and the conditional statements they make up ('if(tookTreasure && isBrave)').
+Every decision that changes a state within your sketch can be represented with a boolean (*yes/no, true/false, 0/1*), and the internal logic of your sketch will follow the path that you outline using logical operators (ex. '&&' *AND*) and the conditional statements they make up `(if(tookTreasure && isBrave))`.
 
-Conditional statements and comparisons are great ways of establishing logic within your sketch. You can create individual scenes or stages within one draw loop just by using booleans as "checkpoints" that will tell the sketch to show or do different things depending on which booleans are true or false.
+Conditional statements and comparisons are great ways of establishing logic within your sketch. You can create individual scenes or stages within one draw loop just by using booleans as "checkpoints" that will tell the sketch to show or do different things depending on which booleans are true or false. Like a river that flows different directions based on which dams are up or down.
 
 Today we will be creating some DIY buttons, and then using those buttons to tell a **cute dog** to sit so it can get a treat.
 
@@ -63,7 +63,7 @@ function draw(){
 }
 ```
 
-Obviously, right now these are fake buttons! They don't do anything but look pretty.
+Right now these are fake buttons! They don't do anything but look pretty.
 
 ## Part Two: What Does The Toggle Button Do?
 In this section, we'll:
@@ -271,7 +271,7 @@ if(pushPulseValue > 10 || pushPulseValue < 1){ //this way it flips if max OR min
 } 
 ```
 
-See how the -1 and 1 are so similarly used to false and true? Flipping the 1 with `pushPulseDirection *= -1;` is just like earlier when we flipped the toggle boolean with `isToggleButtonDown = !isToggleButtonDown` because multiplying by negative one has the same effect on identity as saying not(!) that. Even though we're adding integers, they're acting like booleans in the abstract.
+See how the -1 and 1 are so similarly used to false and true? Flipping the 1 with `pushPulseDirection *= -1;` is just like earlier when we flipped the toggle boolean with `isToggleButtonDown = !isToggleButtonDown` because multiplying by negative one has the same effect on identity as saying not(!) that. Even though we're adding integers, they're acting like booleans in the abstract -- `isThePulseGrowing`.
 
 Cool! We have a pushbutton that pulses when it's being held down! Notice, however, that this pushbutton is not actually triggering a boolean switch *yet*, rather, it's backwards in that it only works when the boolean mouseIsPressed is True.
 
@@ -402,7 +402,7 @@ We want this sketch to show the five stages of Bertie getting a treat:
 By outlining the different parts of this "scene", we've intuitively established two different states, or booleans: `isSitting` and `isTreatOut`. We can see all the different combinations of those two states and link each combination to a different moment/image. There's a secret fifth state that only pops up when the fourth scene is finished, represented with our capstone boolean `isGoodBoy`.
 
 ```js
-///////////////////////////BERTIE SCENE LOGIC//////////////////
+  ///////////////////////////BERTIE SCENE LOGIC//////////////////
   //
   //                !isSitting              isSitting
   //

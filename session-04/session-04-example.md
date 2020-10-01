@@ -1,4 +1,4 @@
-# Session 03 – Metaesquema by Hélio Oiticica
+# Session 04 – Metaesquema by Hélio Oiticica
 *by Guillermo Montecinos*
 
 [Meataesquemas](https://en.wikipedia.org/wiki/H%C3%A9lio_Oiticica#Selected_works) is an exploratory series of more than 350 paitings by the [neo-concrete](https://en.wikipedia.org/wiki/Neo-Concrete_Movement) brazilian artist [Hélio Oiticica](https://en.wikipedia.org/wiki/H%C3%A9lio_Oiticica). The series pursue to explore spatiality and dinamism on a static framework using repetitive basic geometric shapes and plain colors. In this tutorial you will learn how to interpret this piece in code and replicate it on your browser.

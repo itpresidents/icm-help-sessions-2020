@@ -9,5 +9,5 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Overview: Operators and Conditional Statements](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-03/session-03.md)
 * [Example: Bertie Buttons -- Booleans, If Statements, && DIY Buttons](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-03/session-03-example.md)
 ### Session 04 – `for` & `while` loops
+* [Overview: `for` and `while` loops ](https://docs.google.com/presentation/d/12B0CcoBc8JqIbhg3eeSRtJLapqZOqfMNn4vvWgy3uew/edit#slide=id.g97ae4ef6ce_0_0)
 * [Example: Metaesquema by Hélio Oiticica](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-04/session-04-example.md)
-

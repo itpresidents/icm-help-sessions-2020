@@ -11,3 +11,5 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 ### Session 04 – `for` & `while` loops
 * [Overview: `for` and `while` loops ](https://docs.google.com/presentation/d/12B0CcoBc8JqIbhg3eeSRtJLapqZOqfMNn4vvWgy3uew/edit#slide=id.g97ae4ef6ce_0_0)
 * [Example: Metaesquema by Hélio Oiticica](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-04/session-04-example.md)
+### Session 05 – function
+* [Example: Morisawa by John Maeda](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-05/session-05-example.md)

@@ -17,7 +17,7 @@ So in this tutorial, we'll use functions to recreate the John Maeda piece. But b
 The key to using functions is to determine exactly what you would like to include in your function. In other words, finding the right scope of the function so that it is not over simple (otherwise you'd be writing extra repetitive codes) or over complex (not generic enough that it won't be applicable to different situations). In creating graphics, a good way to begin with is try to write the actual codes to perform the task first (so that you can see if the block of code works or not), then wrap them into a function, and finally make adjustments if needed.
 
 ## Drawing the first line of text
-So let's draw the first line of text. Since I wasn't able to find the exact same typeface that Maeda used, we'll be loading a custom font into p5 via `loadFond()` in `preload()`. This is a typeface called "electroharmonix" that give latin alphabet letters the look of a japanese Katakana character with a style similar to the one that Maeda used, and it looks like this:
+So let's draw the first line of text. Since I wasn't able to find the exact same typeface that Maeda used, we'll be loading a custom font into p5 via `loadFond()` in `preload()`. This is a typeface called "electroharmonix" that give latin alphabet letters the look of a Japanese Katakana character with a style similar to the one that Maeda used, and it looks like this:
 
 *Look closer and you'll find that these are actually English letters of "ELECTROHARMONIX" ;)*
 <p align="center">

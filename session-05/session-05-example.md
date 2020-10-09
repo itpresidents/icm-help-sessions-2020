@@ -1,7 +1,9 @@
 # Session 05 – Molisawa-ish by John Maeda
 *by Yuguang Zhang*
 
-The Morisawa 10 series was created by artist John Maeda in 1996 -- "... was inspired by a visit to a Shikō Munakata exhibition in Japan, and also having been fascinated by emerging methods to work with letterforms on the computer. This set of pieces won the honor of the Tokyo Type Director’s Club Gold Prize and were later accessioned into the permanent collection of the Museum of Modern Art in New York." ([Maeda Studio](https://maedastudio.com/morisawa-10-2016/)). In this tutorial you will learn how to make text compositions in the style of the 2nd one of series using the concept of "functions" in p5.js.
+The Morisawa 10 series was created by artist John Maeda in 1996 -- "... was inspired by a visit to a Shikō Munakata exhibition in Japan, and also having been fascinated by emerging methods to work with letterforms on the computer. This set of pieces won the honor of the Tokyo Type Director’s Club Gold Prize and were later accessioned into the permanent collection of the Museum of Modern Art in New York." ([Maeda Studio](https://maedastudio.com/morisawa-10-2016/)). In this tutorial you will learn how to make text compositions in the style of the 2nd one of this series using the concept of "functions" in p5.js.
+
+You can also find a running example of this on the p5.js web editor: [Sketch Link](https://editor.p5js.org/ygzhang/sketches/hU6rBA0X9)
 
 <p align="center">
   <img src="./assets/morisawa_original.jpg" align="middle" width="30%">

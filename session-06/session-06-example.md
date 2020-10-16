@@ -67,11 +67,11 @@ If we `console.log()` the image's width and height, we can see that it is, in fa
 
 Now p5 has some really great built in image functions that we won't be using for this, but just to check we're loading the right image, let's show it on the canvas. Right now our canvas has a size of 400 x 400, but our Pusheen is 200 x 200. P5's built in [image function](https://p5js.org/reference/#/p5/image) has a ton of handy parameters we can set to show the image the way we want to. For example,  we can draw pusheen in the center of our canvas like so: `image(pusheen, 100, 100);`
 
-![pusheen in center of magenta canvas](assets/pusheen_center.png)
+![pusheen in center of magenta canvas](assets/pusheen_center.PNG)
 
 or, if we want to stretch the image over more of the canvas, we could instead write `image(pusheen, 10, 10, 380, 380)`, with the two latter parameters refering to the desired width and height we want to stretch the image to.
 
-![pusheen stretched](assets/pusheen_stretched.png)
+![pusheen stretched](assets/pusheen_stretched.PNG)
 
 But, like i said, we're not interested in using the built-in image stuff. We want to be hardcore and draw the image from the pixel array! But... how do we find the pixel array? Luckily the image function has a handy pair of tools: `image.loadPixels()` and `image.pixels`. When you call .loadPixels(), it takes the information from the image and copies it into an array of values stored inside the image object itself (more on objects later), which we can then access whenever we want by using .pixels. 
 
@@ -161,7 +161,7 @@ for(let x = 0; x < width; x += stepSize){ //goes 0, 50, 100, 150, 200, etc. unti
     }
 }
 ```
-![a grid of black squares](assets/loopGrid.png)
+![a grid of black squares](assets/loopGrid.PNG)
 
 Now, if we want to change the amount of pixels, all we need to do is change the stepSize accordingly. Let's try that again, with more pixels (narrower stepSize), and let's offset it to match our pusheen in the center. Since the pusheen image is 200x200, we want to replace our width and height with 200. But that'll only draw in the top left quadrant of the canvas, so to offset the grid to the center, we're going to add 100 to the x and y position of each square. Another way of doing that would be changing the for loops themselves, something like `for(let x = 100; x < 300;x += stepSize){}`, but I think it makes more sense to put it in the rect(). You could also avoid hard-coding the offset by making it relative to the ratio of the canvas to the image, so instead of `(x + 100)`, it would be `(x + (width - pusheen.width)/2)` -- but let's ignore that in favor of simplicity.
 
@@ -175,7 +175,7 @@ Now, if we want to change the amount of pixels, all we need to do is change the 
     }
   }
 ```
-![smaller centered grid of black squares](assets/loopGrid2.png)
+![smaller centered grid of black squares](assets/loopGrid2.PNG)
 
 Now we have 5 times as many pixels, and they're in the center like our pusheen image!
 
@@ -216,7 +216,7 @@ for (let i = 0; i < colorArrays.length; i++){
     rect(100 * i, 100 * i, 100);
 }
 ```
-![colored squares](squares.png)
+![colored squares](squares.PNG)
 
 But if you recall, when we get our pixel array from pusheen, it's not neatly segmented into separate arrays, one for each pixel. It's one looooong array. How can we loop through that and still get the colors we need? Since we know each color is represented by 4 values, **we can just count in sets of 4**! It's a little confusing, so let's take a look.
 
@@ -253,7 +253,7 @@ Let's experiment and see what happens if we use our pixel array in this same way
   }
 ```
 
-![only one row of pixels](assets/oneRow.png)
+![only one row of pixels](assets/oneRow.PNG)
 
 Uh oh. Well, we definitely get that white top row of the pusheen image... but it just keeps going off screen to the right. How can we know when the pixel array is moving on to the next row of the image? The same way we know to step through by 4 for each pixel -- we know how many pixels are in each row: the **width**! Here's where we'll bring in the nested for loops we were using to create our grid earlier, except now we'll also be using the width and height to know where our index is supposed to be!
 
@@ -296,7 +296,7 @@ But obviously we don't want each square to be black, we want it to be colored in
     }
   }
 ```
-![first pixellated pusheen](assets/pusheen_first.png)
+![first pixellated pusheen](assets/pusheen_first.PNG)
 
 Yay! We've drawn pusheen by using the pixel array! Before we move on though, let's go back and take a deeper look at that weird index offset:
 
@@ -324,13 +324,13 @@ If we make `pixelSize = 1`, we get basically the exact same image as our source!
 
 What happens if we make `pixelSize = 50` instead, so we have a 4x4 grid?
 
-![abstract pusheen](assets/pusheen_abstract50.png)
+![abstract pusheen](assets/pusheen_abstract50.PNG)
 
 Beautiful. I can see it in a gallery already -- *Pusheen, Deconstructed*
 
 It's interesting, you can sort of see the shape of the original image, but it's not quite zoomed in perfectly. For example, why is there a huge pink square on the right? Our original pusheen doesn't have that much pink, in fact, there's just as much blue as there is pink, and none of that made it into our 4x4 grid! Why? Well when we increase the pixelSize, we're also increasing the incrementer of our nested loop. The pixel array isn't getting "zoomed in" on, we're just going further and further between samples. So it just so happens that if you go 50 pixels at a time, when you get to the "3rd" row, you land on a pink pixel, which is then what we use to determine the color for that whole section. To illustrate this, lets change the stepSize super super slightly. Instead of a 4x4, lets do a 5x5 with a `pixelSize = 40`.
 
-![abstract pusheen](assets/pusheen_abstract40.png)
+![abstract pusheen](assets/pusheen_abstract40.PNG)
 
 Now we've barely gone up in resolution, but look! We've got eyes! I think? Or ears? Who knows, but by stepping through every 40 pixels instead of 50, we've landed on more features of our source image, resulting in a slightly better quality representation. Keep that in mind when deciding how big or small to make your pixels, but mess around and see what happens!
 
@@ -641,7 +641,7 @@ That movement is scaled by a new property, `this.easing = 0.08`, which we assign
 
 Now, we get this really fun interaction, where our mouse can move through the pixels like Moses parting the Pusheen Sea.
 
-![pixels pushed around](assets/firstPush.png)
+![pixels pushed around](assets/firstPush.PNG)
 
 ### Go Home
 
@@ -684,7 +684,7 @@ for(let i = 0; i < superPixels.length; i++){
 ```
 *Notice that we call both repel() and goHome() methods before .show(), since we need to know where the pixels are before we show them there.*
 
-![repairedPusheen](assets/goHome.png)
+![repairedPusheen](assets/goHome.PNG)
 
 ### Mouse Click
 

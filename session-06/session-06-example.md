@@ -143,7 +143,7 @@ console.log(train); //outputs: [1, 3, 12, 0]
 
 Another for loop that does almost the exact same thing is a *for-of loop*. Instead of being tied to the length of the array, it just knows to iterate through each individual element. It looks like `for(let car in train){}` where "car" is an arbitary variable name that can be whatever you want, it just represents each individual element. We won't be using that here though for various reasons, so to limit confusion, I won't be mentioning it again.
 
-Enough of trains, lets get back to images.
+Enough trains, lets get back to images.
 
 ### Drawing Grids of Squares
 
@@ -216,7 +216,7 @@ for (let i = 0; i < colorArrays.length; i++){
     rect(100 * i, 100 * i, 100);
 }
 ```
-![colored squares](squares.PNG)
+![colored squares](assets/squares.PNG)
 
 But if you recall, when we get our pixel array from pusheen, it's not neatly segmented into separate arrays, one for each pixel. It's one looooong array. How can we loop through that and still get the colors we need? Since we know each color is represented by 4 values, **we can just count in sets of 4**! It's a little confusing, so let's take a look.
 
@@ -274,7 +274,7 @@ So let's start by copying the grid from earlier. To avoid confusion, i'm going t
 
 But obviously we don't want each square to be black, we want it to be colored individually depending on the corresponding pixel from our pusheen.pixels array. We now need to change our index so that we're getting the right section of array values from row to row and column to column.
 
-*Note:  One thing that really tripped me up when starting to learn this stuff was realizing that **`x` is for each COLUMN (sections of width), and `y` is for each ROW (sections of height)***
+*Note:  One thing that really tripped me up when starting to learn this stuff was realizing that **`x` is for each COLUMN (sections of width), and `y` is for each ROW (sections of height)**. I always confused the two because a row goes along the width and the columns go along the height, but x and y represent the SECTIONS of those two, not the rows/columns themselves.*
 
 ```js
   //now lets add the col/row index offset
@@ -306,12 +306,14 @@ What's going on here? Well we need to go pixel by pixel from the top left pixel 
 
 At this point we've got something like `index = x * 4`, which would be fine for getting through one row, and that's actually exactly what we did earlier. 
 
-But how do we account for moving to the next row? If we know each row has a certain number of pixels -- in this image it's a width of 200 -- then whenever we want to find pixels in another row, all we need to do is add the width to the index offset! if we wanted to find the first pixel in row 2, that index would be `index = (200 + 0) * 4` -- 200 to skip the top row of 200 pixels, 0 because that's the first pixel column (x), and *4 for each set of 4 values. 
+But how do we account for moving to the next row? If we know each row has a certain number of pixels -- in this image it's a width of 200 -- then whenever we want to find pixels in another row, all we need to do is add the width to the index offset! If we wanted to find the first pixel in row 2, that index would be `index = (200 + 0) * 4` -- 200 to skip the top row of 200 pixels, 0 because that's the first pixel column (x), and *4 for each set of 4 values. 
 
 Now, all we need to add is a multiplier on that 200 that accounts for which row we're on. Luckily we can use y for that, so let's plug that in, and replace 200 with pusheen.width (which is 200):
 
 `let index = ((y * pusheen.width) + x) * 4`
+
 in the abstract, you can think of it like:
+
 `let index = ((ThisRow * NumberOfPixelsPerRow) + ThisColumn) * NumberOfValuesPerPixel`
 
 But really, you don't have to super understand it, you can just copy and paste it from sketch to sketch like I do haha.
@@ -328,7 +330,7 @@ What happens if we make `pixelSize = 50` instead, so we have a 4x4 grid?
 
 Beautiful. I can see it in a gallery already -- *Pusheen, Deconstructed*
 
-It's interesting, you can sort of see the shape of the original image, but it's not quite zoomed in perfectly. For example, why is there a huge pink square on the right? Our original pusheen doesn't have that much pink, in fact, there's just as much blue as there is pink, and none of that made it into our 4x4 grid! Why? Well when we increase the pixelSize, we're also increasing the incrementer of our nested loop. The pixel array isn't getting "zoomed in" on, we're just going further and further between samples. So it just so happens that if you go 50 pixels at a time, when you get to the "3rd" row, you land on a pink pixel, which is then what we use to determine the color for that whole section. To illustrate this, lets change the stepSize super super slightly. Instead of a 4x4, lets do a 5x5 with a `pixelSize = 40`.
+It's interesting, you can sort of see the shape of the original image, but it's not quite zoomed in perfectly. For example, why is there a huge pink square on the right? Our original pusheen doesn't have that much pink, in fact, there's just as much blue as there is pink, and none of that made it into our 4x4 grid! Why? Well when we increase the pixelSize, we're also increasing the incrementer of our nested loop. The pixel array isn't getting "zoomed in" on, we're just going further and further between samples. So it just so happens that if you go 50 pixels at a time, when you get to the "3rd" row, you land on ONE pink pixel, which is then what we use to determine the color for that whole section. To illustrate this, lets change the stepSize super super slightly. Instead of a 4x4, lets do a 5x5 with a `pixelSize = 40`.
 
 ![abstract pusheen](assets/pusheen_abstract40.PNG)
 
@@ -506,7 +508,7 @@ Class SuperPixel{
 
 }
 ```
-*Important: Things can get messy fast when naming. Try and stick to the convention of **Capitalizing the Class (SuperPixel), lowercasing the individual object (superPixel), and pluralizing the array of objects (superPixels)**
+*Important: Things can get messy fast when naming. Try and stick to the convention of **Capitalizing the Class (SuperPixel), lowercasing the individual object (superPixel), and pluralizing the array of objects (superPixels)***
 
 Great, but how do we actually tell our code what a superPixel is supposed to be? Well the class is supposed to be the factory template right? Sounds like we need a `constructor()`! The constructor is the function that is called whenever a `new SuperPixel` is made. It's where we put all the information we used when creating the object by hand earlier (position, size, color), except now, we want to generalize the creation of the superPixel to whatever arguments are passed through when our code is creating each individual one. So we're going to establish some parameters in our constructor(), which will then define the values in our object:
 

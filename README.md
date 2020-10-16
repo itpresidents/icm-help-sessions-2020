@@ -13,3 +13,5 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Example: Metaesquema by Hélio Oiticica](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-04/session-04-example.md)
 ### Session 05 – `functions`
 * [Example: Morisawa by John Maeda](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-05/session-05-example.md)
+### Session 06 - `arrays`, `objects`, and `pixels`
+* [Example: Pushin' Pusheen Pixels](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-06/session-06-example.md)

@@ -12,7 +12,7 @@
 
 ## Important Commands
 |Syntax|Command|
-|:-:|:-:|
+|:-|:-|
 | `$ git config`|Sets up your local github identity|
 | `$ git clone [url]`|Clones a repo form `url`|
 | `$ git add -A`|Stages all changes made on the curren repo [(diff between -a and .?)](https://gist.github.com/dsernst/ee240ae8cac2c98e7d5d)|

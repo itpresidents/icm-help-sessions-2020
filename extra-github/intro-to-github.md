@@ -50,7 +50,7 @@ $ git config --global init.defaultBranch main
 
 #### Students
 
-* [**Fork**](https://guides.github.com/activities/forking/) [ITP Residents' corpora](https://github.com/itpresidents/corpora) repo to your own account
+* [**Fork**](https://guides.github.com/activities/forking/) the [ITP Residents' corpora](https://github.com/itpresidents/corpora) repo to your own account
 * [**Clone**]() your own corpora repo to your machine
 * Open the repo on your code editor
 * You can create a category or add new data to any

@@ -1,6 +1,8 @@
 # ICM Help Sessions 2020
 by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://github.com/guillemontecinos), [@lydiajessup](https://github.com/lydiajessup) and [@viztopia](https://github.com/viztopia) with :heart:
 
+
+## ICM Sessions
 ### Session 01 – Basics of p5.js
 * [Example: Green and Orange by Carmen Herrera](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-01/session-01.md)
 ### Session 02 – Variables
@@ -17,3 +19,6 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Example: Pushin' Pusheen Pixels](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-06/session-06-example.md)
 ### Session 08 - `Pixels`
 * [Example: Pixel Sorting](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-08/session-08-example.md)
+
+## Extra Sessions
+* [Intro to Github Woekshop]()

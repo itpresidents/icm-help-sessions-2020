@@ -11,17 +11,18 @@
   * We recommend [VS Code](https://code.visualstudio.com/)
 
 ## Important Commands
-
-* `$ git config`: Sets up your local github identity
-* `$ git clone [url]`: Clones a repo form `url`
-* `$ git add -A`: Stages all changes made on the curren repo [(diff between -a and .?)](https://gist.github.com/dsernst/ee240ae8cac2c98e7d5d)
-* `$ git commit -m "message"`: Commits the previously added changes, letting them ready to push
-* `$ git push`: Pushes the commited changes to the remote branch (origin)
-* `$ git pull`: Pulls all changes locally to keep your repo updated with the remote
-* `$ git checkout --b`: Shows the user all the existing branches 
-* `$ git status`: Shows the working tree status
-* `$ git reset`: Resets current HEAD to the specified state
-* `$ git rebase`: Reapply commits on top of another base tip
+|Syntax|Command|
+|:-:|:-:|
+| `$ git config`|Sets up your local github identity|
+| `$ git clone [url]`|Clones a repo form `url`|
+| `$ git add -A`|Stages all changes made on the curren repo [(diff between -a and .?)](https://gist.github.com/dsernst/ee240ae8cac2c98e7d5d)|
+| `$ git commit -m "message"`|Commits the previously added changes, letting them ready to push|
+| `$ git push`|Pushes the commited changes to the remote branch (origin)|
+| `$ git pull`|Pulls all changes locally to keep your repo updated with the remote|
+| `$ git checkout --b`|Shows the user all the existing branches |
+| `$ git status`|Shows the working tree status|
+| `$ git reset`|Resets current HEAD to the specified state|
+| `$ git rebase`|Reapply commits on top of another base tip|
 
 ## Outline
 

@@ -12,19 +12,23 @@
 
 ## Important Commands
 
-* git config
-* clone
-* add -a (diff between -a and .?)
-* commit -m
-* push (origin main)
-* pull
-* checkout -b
-* status
-* reset / rebase
+* `$ git config`
+* `$ git clone`
+* `$ git add -A` [(diff between -a and .?)](https://gist.github.com/dsernst/ee240ae8cac2c98e7d5d)
+* `$ git commit -m "message"`
+* `$ git push` (origin main)
+* `$ git pull`
+* `$ git checkout -b`
+* `$ git status`
+* `$ git reset` / `$ git rebase`
 
 ## Outline
 
 * Setup account locally
+```batch
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+```
 * Command Line
   * cd / ls / pwd / cd ..
   * `git --version` (install git prompt)

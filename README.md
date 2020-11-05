@@ -15,3 +15,5 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Example: Morisawa by John Maeda](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-05/session-05-example.md)
 ### Session 06 - `arrays`, `objects`, and `pixels`
 * [Example: Pushin' Pusheen Pixels](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-06/session-06-example.md)
+### Session 08 - Pixel
+* [Example: Pixel Sorting](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-08/session-08-example.md)

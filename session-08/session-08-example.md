@@ -5,15 +5,15 @@ Pixel sorting is an interesting, glitchy effect which selectively orders the pix
 The Great Wave off Kanagawa" by artist Hokusai in p5.js by using its built-in `pixels` arry. You can find a running example of this on the p5.js web editor: [(Sketch Link)](https://editor.p5js.org/ygzhang/sketches/uco7ZltvL). NOTE: try to open it in Firefox instead of Chrome if it appears laggy.
 
 <p align="center">
-  <img src="./assets/wave_sorted.jpg" align="middle" width="30%">
+  <img src="./assets/wave_sorted.jpg" align="middle" width="50%">
 </p>
 
 ## Brief Intro to Pixel Sorting Algorithm & The Built-in PIXELS Array in p5
-The way the pixel sorting works is basically swapping, or changing, the orders of pixels on each row & column using an arbitrary criteria (hence "sorting"), such as brightness or hue. At a high level, it works like this:
+The way pixel sorting works is basically swapping, or changing, the orders of pixels on each row & column using an arbitrary criteria (hence "sorting"), such as brightness or hue. At a high level, it works like this:
 ```js
   // 1. get all the pixels of an image
   // 2. sort pixels in each row by a criteria
-  // 3. sort pixels in each colulmn by a criteria
+  // 3. sort pixels in each column by a criteria
   // 4. update the pixel values
 ```
 But first off, what are pixels?
@@ -73,8 +73,7 @@ And to make the monochrome wave image, we just sets the RGB value of each pixel 
 ```js
   loadPixels();
 
-  //get the brightness representation of all pixels to deside 
-  //where to begin and end sorting for each row / column
+  //get the brightness representation of all pixels
   bPixels = getBrightnessPixels(pixels);
   
   for (let i = 0; i < height; i++) {
@@ -93,7 +92,7 @@ And to make the monochrome wave image, we just sets the RGB value of each pixel 
 ```
 
 <p align="center">
-  <img src="./assets/wave_bw.jpg" align="middle" width="30%">
+  <img src="./assets/wave_bw.jpg" align="middle" width="50%">
 </p>
 
 ## Group the Pixels for Sorting
@@ -125,7 +124,7 @@ You might have noticed that, pixels in the `pixels` array are actually "flattene
   updatePixels();
 ```
 ## How to Sort a Row/Column
-Now it's time to sort the pixels by row and column. The way to do that is actually very simple in JavaScript - arrys in JavaScript has a built-in `.sort()` function! So all we need to do is to grab a row/column of pixels, save them to a temporary array, and call `array.sort()`. Below is a `sortRow()` function that takes in the grouped pixels, sort its designated rows, and apply the changes to the original pixels array of the canvas. (There's a `sortColulmn()` function that does exactly the same thing but just doing it by columns.) The grabbing is done by using `.slice()`, and then sort by calling `rowToSort.sort()`.
+Now it's time to sort the pixels by row and column. The way to do that is actually very simple in JavaScript - arrys in JavaScript has a built-in `.sort()` function! So all we need to do is to grab a row/column of pixels, save them to a temporary array, and call `array.sort()`. Below is a `sortRow()` function that takes in the grouped pixels, sort its designated rows, and apply the changes to the original pixels array of the canvas. (There's also a `sortColulmn()` function that does exactly the same thing but just doing it by columns.) The grabbing is done by using `.slice()`, and then sort by calling `rowToSort.sort()`.
 ```js
   function sortRow(groupedPixels, originalPixels, startRow, endRow) {
 
@@ -153,7 +152,7 @@ Then in `draw()`, we can sort the top half of the image like this:
 ```
 
 <p align="center">
-  <img src="./assets/wave_sorted_row.jpg" align="middle" width="30%">
+  <img src="./assets/wave_sorted_row.jpg" align="middle" width="50%">
 </p>
 
 On top of this, we can also selectively sort part of the row/column by giving it a start and an end. The method below is calculating a random start X position and a random end X position of a row, grab the section of pixels between the start and the end, then just apply sorting to this section.
@@ -182,7 +181,7 @@ On top of this, we can also selectively sort part of the row/column by giving it
   }
 ```
 <p align="center">
-  <img src="./assets/wave_sorted_row_2.jpg" align="middle" width="30%">
+  <img src="./assets/wave_sorted_row_2.jpg" align="middle" width="50%">
 </p>
 
 Finally, we can break down a row/column into multiple sections by brightness values, and apply sortings to each section individually. To do so, we can look for the first pixel in a row that has a brightness value greater than a threshold we defined (e.g. 50), then look for the following pixel with a brightness value smaller than that threshold, and turn anything in-between into a section for sorting. Then look for the second section, and third, so on so forth.
@@ -237,6 +236,6 @@ Then we can apply both row sorting and column sorting in `draw()`, and we'll get
   updatePixels();
 ```
 <p align="center">
-  <img src="./assets/wave_sorted.jpg" align="middle" width="30%">
+  <img src="./assets/wave_sorted.jpg" align="middle" width="50%">
 </p>
 

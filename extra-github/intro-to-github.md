@@ -25,17 +25,15 @@
 ## Outline
 
 * Setup account locally
-```batch
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
-```
 * Command Line
   * cd / ls / pwd / cd ..
   * `git --version` (install git prompt)
   * git config
-    * `$ git config --global user.name "John Doe"`
-    * `$ git config --global user.email johndoe@example.com`
-    * `git config --global init.defaultBranch main`
+```batch
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+$ git config --global init.defaultBranch main
+```
 * Create first repo
   * Create with readme
   * Clone locally

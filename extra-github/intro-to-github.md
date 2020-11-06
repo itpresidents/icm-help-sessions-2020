@@ -14,6 +14,7 @@
 |Syntax|Command|
 |:-|:-|
 | `$ git config`|Sets up your local github identity|
+| `$ git init`|Turns an existing directory into a git repository|
 | `$ git clone [url]`|Clones a repo from `url`|
 | `$ git add -A`|Stages all changes made on the curren repo [(diff between -a and .?)](https://gist.github.com/dsernst/ee240ae8cac2c98e7d5d)|
 | `$ git commit -m "message"`|Commits the previously added changes, getting them ready to push|

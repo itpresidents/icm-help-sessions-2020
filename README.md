@@ -21,4 +21,4 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Example: Pixel Sorting](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-08/session-08-example.md)
 
 ## Extra Sessions
-* [Intro to Github Woekshop](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/extra-github/intro-to-github.md)
+* [Intro to Github Workshop](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/extra-github/intro-to-github.md)

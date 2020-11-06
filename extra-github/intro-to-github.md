@@ -37,9 +37,12 @@ $ git config --global init.defaultBranch main
 * Command Line
   * cd / ls / pwd / cd ..
   * `git --version` (install git prompt)
-* Create first repo
-  * Create with readme
+* Create first repo from website
+  * Create on website with readme
   * Clone locally
+* Create repo from existing directory
+  * Create on website without readme
+  * `git init` locally
 * Make your first commit/push
 * Can also edit directly on repo website
 * Forks
@@ -67,5 +70,5 @@ $ git config --global init.defaultBranch main
 * [Hello World – Github](https://guides.github.com/activities/hello-world/)
 * [Understanding the Github flow](https://guides.github.com/introduction/flow/)
 * [Github Guides](https://guides.github.com/)
-* [Customize yout Terminal on Mac](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c)
+* [Customize your Terminal on Mac](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c)
 * [Markdown Guide](https://www.markdownguide.org/basic-syntax)

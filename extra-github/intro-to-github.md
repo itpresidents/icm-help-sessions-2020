@@ -67,3 +67,4 @@ $ git config --global init.defaultBranch main
 * [Hello World – Github](https://guides.github.com/activities/hello-world/)
 * [Understanding the Github flow](https://guides.github.com/introduction/flow/)
 * [Github Guides](https://guides.github.com/)
+* [Customize yout Terminal on Mac](https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c)

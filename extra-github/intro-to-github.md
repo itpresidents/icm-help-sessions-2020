@@ -41,6 +41,7 @@ $ git config --global init.defaultBranch main
   * Create with readme
   * Clone locally
 * Make your first commit/push
+* Can also edit directly on repo website
 * Forks
 * Pull requests
 

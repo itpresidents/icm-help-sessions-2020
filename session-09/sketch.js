@@ -5,9 +5,9 @@
 * Week 9 - Sound
 *
 * This sketch is a simple animation of a "spirit" image
-* falling from the sky and breaking a previously invisible 
-* piece of glass. Here we work with triggering sounds, 
-* changing audio effects parameters, and manipulating images 
+* falling from the sky and breaking a previously invisible
+* piece of glass. Here we work with triggering sounds,
+* changing audio effects parameters, and manipulating images
 * based on animated events.
 *
 */
@@ -28,8 +28,8 @@ function preload() {
   glass = loadImage('assets/broken-glass.png');
   scream = loadSound(['assets/scream-oof-mono.ogg',
                       'assets/scream-oof-mono.mp3']);
-  shatter = loadSound(['assets/break-glass.ogg',
-                       'assets/break-glass.mp3'] );
+  shatter = loadSound(['assets/break-glass-trim.ogg',
+                       'assets/break-glass-trim.mp3'] );
 }
 
 
@@ -45,11 +45,11 @@ function setup() {
 
   // Here we'll add some reverb and connect it to our sound.
   reverb = new p5.Reverb();
-  // We'll disconnect the scream sound from the Master so 
+  // We'll disconnect the scream sound from the Master so
   // that we only hear it processed through the reverb.
   scream.disconnect();
   reverb.process(scream, 3, 2);
-  
+
 }
 
 function draw() {
@@ -58,12 +58,12 @@ function draw() {
   //// For intial testing, we can map the scale to the mouseX.
   // scale = constrain(map(mouseX, 0, width, 20, 220), 20, 220);
 
-  // We will have to check these a couple times, 
+  // We will have to check these a couple times,
   // so let's only call them once.
   screamPlaying = scream.isPlaying();
   shatterPlaying = shatter.isPlaying();
 
-  // Here we get the current time of the scream sound.  
+  // Here we get the current time of the scream sound.
   let screamCur = scream.currentTime();
   // And the progress scaled from 0-1.
   screamProg = screamCur / screamDur;
@@ -73,8 +73,8 @@ function draw() {
   let scale = map(screamCur, 0.0, screamDur - 0.5, 10.0, 400.0, true);
   console.log("image scale is = " + scale);
 
-  // We will map the reverb mix from full reverb mix (wet) 
-  // to no reverb (dry) as the spirit gets closer to us.  
+  // We will map the reverb mix from full reverb mix (wet)
+  // to no reverb (dry) as the spirit gets closer to us.
   let m = map(screamCur, 0.0, screamDur, 1.0, 0.0);
   reverb.drywet(m);
 
@@ -82,7 +82,7 @@ function draw() {
   // image(spirit, width*0.5, height*0.5, scale, scale);
 
   // Would be nice to rotate the spirit as it 'falls' so we can use
-  // translate() and rotate() inside of push() and pop(). 
+  // translate() and rotate() inside of push() and pop().
   push();
   translate(width * 0.5, height * 0.5);
   // Check here to see if we have clicked the page yet.
@@ -92,7 +92,7 @@ function draw() {
   }
   pop();
 
-  // Once our the scream sound is almost done 
+  // Once our the scream sound is almost done
   // aka our spirit is close enough...
   if (screamProg > 0.92) {
   // Draw the glass shattered image
@@ -103,19 +103,19 @@ function draw() {
   // Otherwise keep rotating the spirit image.
     rot = frameCount * 0.15;
   }
-  
+
   // If the scream is playing & near the end
   // & the shatter sound is not playing, then play shatter.
   if (screamPlaying && screamProg > 0.92 && !shatterPlaying) {
     shatter.play();
   }
 
-  //// We only want to play the first 1.5 seconds of the shatter sound, 
+  //// We only want to play the first 1.5 seconds of the shatter sound,
   // but for some reason, the addCue() function is buggy.
-  
+
   // shatter.addCue(1.5, shatterStop);
 
-  // So we can hand code it like so.  
+  // So we can hand code it like so.
   let shatterCur = shatter.currentTime();
   // console.log(shatterCur);
   if (shatterCur > 1.5) {
@@ -125,7 +125,7 @@ function draw() {
 }
 
 function mousePressed() {
-  // The first time we click on the canvas 
+  // The first time we click on the canvas
   // will start the spirit image rotating.
   clicked = true;
   if (!screamPlaying) {

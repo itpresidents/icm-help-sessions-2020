@@ -7,6 +7,8 @@
 // changing audio effects parameters, and manipulating images
 // based on animated events.
 
+/* This sketch require p5 version 0.9.0 to work!! */
+
 
 let spirit;
 let scream, screamDur;

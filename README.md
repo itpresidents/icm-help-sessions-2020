@@ -19,6 +19,8 @@ by [@augustluhrs](https://github.com/augustluhrs), [@guillemontecinos](https://g
 * [Example: Pushin' Pusheen Pixels](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-06/session-06-example.md)
 ### Session 08 - `Pixels`
 * [Example: Pixel Sorting](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-08/session-08-example.md)
+### Session 09 - `Interactive Sound`
+* [Example: Falling Spirit](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/session-09/session-09-example.md)
 
 ## Extra Sessions
 * [Intro to Github Workshop](https://github.com/itpresidents/icm-help-sessions-2020/blob/master/extra-github/intro-to-github.md)

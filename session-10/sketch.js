@@ -1,11 +1,10 @@
-// ICM Help Sessions – Lesson 9
+// ICM Help Sessions – Lesson 10
 // NYU ITP, Fall 2020
 // by Billy Bennett
-// This sketch is a simple animation of a "spirit" image
-// falling from the sky and breaking a previously invisible
-// piece of glass. Here we work with noise,
-// amplitude (volume) envelopes, filters, oscillators,
-// and basic interaction.
+// This sketch creates an interactive light saber complete with
+// sound effects that mimic drawing the light saber and waving it around.
+// Here we work with noise, amplitude (volume) envelopes, filters,
+// oscillators, and basic interaction.
 
 // Did you know that, using commas, you can create multiple empty variables?
 let w, h;

@@ -1,3 +1,12 @@
+// ICM Help Sessions – Lesson 9
+// NYU ITP, Fall 2020
+// by Billy Bennett
+// This sketch is a simple animation of a "spirit" image
+// falling from the sky and breaking a previously invisible
+// piece of glass. Here we work with noise,
+// amplitude (volume) envelopes, filters, oscillators,
+// and basic interaction.
+
 // Did you know that, using commas, you can create multiple empty variables?
 let w, h;
 let noise, filter, ampEnv, osc, amplitude;
@@ -83,7 +92,7 @@ function draw() {
 
   drawDeathStar();
   drawInstructions();
-  if(drawn) {
+  if(showSaber) {
     background(255, opacity);
     drawLightSaber();
   }
@@ -91,7 +100,7 @@ function draw() {
 }
 
 function mousePressed() {
-  drawn = true;
+  showSaber = true;
   userStartAudio();
   filtEnv.play();
   ampEnv.play();
@@ -117,6 +126,8 @@ function drawLightSaber() {
   image(lightSaber, 0, 0, w, w);
   pop();
 
+  // Here we track the difference in mouse position from the last frame.
+  // We'll use this value to inscrease the oscillators' frequencies.
   mouseMove = abs(mouseX - prevMouse);
   // We can smooth the frequency changes by interpolating the mouse position
   // and previous mouse position.

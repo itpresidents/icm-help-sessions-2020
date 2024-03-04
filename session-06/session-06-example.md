@@ -2,7 +2,7 @@
 ###  Arrays, Objects, and Pixels
 *by August Luhrs*
 
-[Link to Final Sketch in p5 Editor](https://editor.p5js.org/DeadAugust/sketches/KUdche9rz)
+[Link to Final Sketch in p5 Editor](https://editor.p5js.org/augustluhrs/sketches/KUdche9rz)
 
 ![the final sketch](assets/pusheenPushin_gif.gif)
 
